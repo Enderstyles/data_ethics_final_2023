@@ -9,8 +9,8 @@ def main():
     spark = SparkSession.builder.getOrCreate()
     sc = spark.sparkContext
     sc.setLogLevel(logLevel="WARN")
-    df_2019 = spark.read.csv("./Jan_2019_ontime.csv", header=True)
-    df_2020 = spark.read.csv("./Jan_2020_ontime.csv", header=True)
+    df_2019 = spark.read.csv("../Jan_2019_ontime.csv", header=True)
+    df_2020 = spark.read.csv("../Jan_2020_ontime.csv", header=True)
 
     y.means(df_2019)
     z.distribution_beta(df_2019, df_2020)
